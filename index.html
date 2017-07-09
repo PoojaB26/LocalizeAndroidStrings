@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/element.css">
 
 </head>
@@ -32,8 +33,6 @@
 
 
                     <input id="file-input" name="input"  onchange="readFile(event)" accept='text/xml' type="file" class="file" multiple data-show-upload="false" data-show-caption="true" >
-                    <br><br>
-                    <button type="button" id="btn"  class="large btn btn-primary">Translate</button>
 
 
                 </div>
@@ -47,11 +46,12 @@
 </div>
 
 <br>
+    <div id="result" >
+        <i id="spinner" class="fa fa-spinner fa-spin" style="font-size:48px"></i>
 
-    <div id="result" class="">
-<div class="progress progress-striped active">
-    <div class="progress-bar"></div>
-</div>
+       <!-- <div class="progress progress-striped active">
+    <div class="progress-bar"></div>-->
+
 
     <input type="button" value="Copy" id="btn-copyall" onclick="copyToClipboard()" /> <br> <br>
     <br> <br>

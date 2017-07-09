@@ -3,10 +3,11 @@
  */
 $( document ).ready(function() {
     console.log( "ready!" );
+    hideDiv();
 
 
 
-document.getElementById("btn").onclick = function() {translateStrings()};
+//document.getElementById("btn").onclick = function() {translateStrings()};
 $( function() {
     var availableTags = [
         "en",
@@ -26,11 +27,21 @@ $( function() {
 } );
 
 });
-var result_div = document.getElementById("result");
+
+function hideDiv() {
+    document.getElementById('result').style.display = "none";
+    console.log("HSE");
+}
+
+
+function showDiv() {
+    document.getElementById('result').style.display = "block";
+    console.log("HE");
+}
 
 function translateStrings(value, key)
 {
-    result_div.style.display = "block";
+    showDiv();
     var target_value = document.getElementById("locale").value;
     $.get("https://translation.googleapis.com/language/translate/v2",
         {
@@ -54,9 +65,12 @@ function translateStrings(value, key)
         console.log(errorThrown);
 
     });
+
+    document.getElementById("spinner").style.display = 'none';
 }
 
 function readFile (event) {
+   // result_div.style.display = "block";
     var input = event.target;
 
     var reader = new FileReader();
@@ -66,6 +80,7 @@ function readFile (event) {
         node.innerText = text;
         regex(text);
         console.log(reader.result.substring(0, 200));
+
     };
     reader.readAsText(input.files[0]);
 }
