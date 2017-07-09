@@ -1,20 +1,73 @@
 <html>
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/element.css">
 
 </head>
 <body>
-<input type='file' accept='text/xml' onchange='readFile(event)'><br>
-<div id='file-output'>
+<div class="container">
+
+        <div class="jumbotron">
+            <h1>Localize Android Strings</h1>
+            <p>Upload your strings.xml file from your Android project and get it translated to any language.</p>
+        </div>
+
+    <div class="col-center">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" id="text-show">Select File</label>
+                    <div class="ui-widget">
+                        <label for="locale">Locale: </label>
+                        <input id="locale">
+                    </div>
+
+
+                    <input id="file-input" name="input"  onchange="readFile(event)" accept='text/xml' type="file" class="file" multiple data-show-upload="false" data-show-caption="true" >
+                    <br><br>
+                    <button type="button" id="btn"  class="large btn btn-primary">Translate</button>
+
+
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+
 </div>
-<b>Text:</b> <input type="text" id="text" value="How are you"/> <br>
-<b>Target Language:</b>
-
-
+<div hidden id='file-output'>
+</div>
 
 <br>
-<input type="button" value="Translate" id="btn" /> <br> <br>
-<b>Translated Text:</b><div id="translated"></div>
+
+    <div id="result" class="">
+<div class="progress progress-striped active">
+    <div class="progress-bar"></div>
+</div>
+
+    <input type="button" value="Copy" id="btn-copyall" onclick="copyToClipboard()" /> <br> <br>
+    <br> <br>
+<b>Translated Text:</b>
+    <div class="well" id="value-container">
+     <!--   <textarea class="text-container" rows="20" cols="40" style="border:none;">
+            <?xml version="1.0" encoding="utf-8"?>
+            <resources>
+        </textarea>-->
+        <p id="translated"></p>
+    </div>
+
+    <div class="well" id="check">
+    </div>
+</div>
+    </div>
 <script src="js/func.js"></script>
 
 </body>

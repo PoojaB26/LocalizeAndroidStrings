@@ -1,0 +1,30 @@
+
+.text-container {
+    position: relative;
+}
+textarea {
+    background: transparent;
+    resize: none;
+    border: 0 none;
+    outline: none;
+    position: absolute;
+}
+.col-center{
+    align-content: center;
+    margin:0 auto;
+    display: block;
+}
+
+#text-show{
+    width: 60%;
+    font-size: large;
+}
+
+.hidden{
+    display: none;
+}
+
+#btn{
+    font-size: large;
+    padding: 10px 40px 10px 40px;
+}
